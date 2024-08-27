@@ -1,0 +1,36 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-awsbackend-dev-78d16-authRole",
+      "UnauthRoleArn": "arn:aws:iam::668157445385:role/amplify-awsbackend-dev-78d16-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::668157445385:role/amplify-awsbackend-dev-78d16-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-awsbackend-dev-78d16-deployment",
+      "UnauthRoleName": "amplify-awsbackend-dev-78d16-unauthRole",
+      "StackName": "amplify-awsbackend-dev-78d16",
+      "StackId": "arn:aws:cloudformation:eu-central-1:668157445385:stack/amplify-awsbackend-dev-78d16/8bce2fe0-63b9-11ef-959c-060bfbf081ff",
+      "AmplifyAppId": "d12ijr5yir4r11"
+    },
+    "categories": {
+      "auth": {
+        "awsbackend5607b78c5607b78c": {
+          "facebookAppId": "814044000903673",
+          "googleClientId": "530444261633-r0f9fau12d4tcnrlqgmid0iogfmi1jut.apps.googleusercontent.com",
+          "amazonAppId": "amzn1.application-oa2-client.34caff1a78a7472d956000cd9caeb20b"
+        }
+      },
+      "function": {
+        "awsbackend5607b78c5607b78cDefineAuthChallenge": {},
+        "awsbackend5607b78c5607b78cCreateAuthChallenge": {},
+        "awsbackend5607b78c5607b78cVerifyAuthChallengeResponse": {
+          "RECAPTCHASECRET": "6LcclC8qAAAAAPAI8bOvZPwoaC5878j1tCfD3Amy"
+        },
+        "awsbackend5607b78c5607b78cCustomMessage": {
+          "REDIRECTURL": "www.everything.apps.com/home",
+          "EMAILSUBJECT": "We need to verify your account",
+          "EMAILMESSAGE": "Please solve the captcha"
+        }
+      }
+    }
+  }
+}

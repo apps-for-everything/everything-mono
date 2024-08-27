@@ -1,0 +1,208 @@
+{
+  "api": {
+    "AdminQueries": {
+      "authorizationType": "AMAZON_COGNITO_USER_POOLS",
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "awsbackend5607b78c5607b78c"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "AdminQueriesb614c8ea"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "auth": {
+    "awsbackend5607b78c5607b78c": {
+      "customAuth": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "awsbackend5607b78c5607b78cDefineAuthChallenge",
+          "triggerProvider": "Cognito"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "awsbackend5607b78c5607b78cCreateAuthChallenge",
+          "triggerProvider": "Cognito"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "awsbackend5607b78c5607b78cVerifyAuthChallengeResponse",
+          "triggerProvider": "Cognito"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "awsbackend5607b78c5607b78cCustomMessage",
+          "triggerProvider": "Cognito"
+        }
+      ],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "ON",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "BIRTHDATE",
+          "EMAIL",
+          "GENDER",
+          "NAME",
+          "PHONE_NUMBER",
+          "PICTURE"
+        ],
+        "socialProviders": [
+          "GOOGLE"
+        ],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    },
+    "userPoolGroups": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID",
+            "IdentityPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "awsbackend5607b78c5607b78c"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito-UserPool-Groups"
+    }
+  },
+  "function": {
+    "AdminQueriesb614c8ea": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "awsbackend5607b78c5607b78c"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "awsbackend5607b78c5607b78cCreateAuthChallenge": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "awsbackend5607b78c5607b78cCustomMessage": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "awsbackend5607b78c5607b78cDefineAuthChallenge": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "awsbackend5607b78c5607b78cVerifyAuthChallengeResponse": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_auth_awsbackend5607b78c5607b78c_amazonAppId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "awsbackend5607b78c5607b78c"
+        }
+      ]
+    },
+    "AMPLIFY_auth_awsbackend5607b78c5607b78c_facebookAppId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "awsbackend5607b78c5607b78c"
+        }
+      ]
+    },
+    "AMPLIFY_auth_awsbackend5607b78c5607b78c_googleClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "awsbackend5607b78c5607b78c"
+        }
+      ]
+    },
+    "AMPLIFY_function_awsbackend5607b78c5607b78cCustomMessage_EMAILMESSAGE": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "awsbackend5607b78c5607b78cCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_awsbackend5607b78c5607b78cCustomMessage_EMAILSUBJECT": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "awsbackend5607b78c5607b78cCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_awsbackend5607b78c5607b78cCustomMessage_REDIRECTURL": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "awsbackend5607b78c5607b78cCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_awsbackend5607b78c5607b78cVerifyAuthChallengeResponse_RECAPTCHASECRET": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "awsbackend5607b78c5607b78cVerifyAuthChallengeResponse"
+        }
+      ]
+    }
+  }
+}

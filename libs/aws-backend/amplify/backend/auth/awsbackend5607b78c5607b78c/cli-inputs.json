@@ -1,0 +1,86 @@
+{
+  "version": "1",
+  "cognitoConfig": {
+    "identityPoolName": "awsbackend5607b78c_identitypool_5607b78c",
+    "allowUnauthenticatedIdentities": false,
+    "resourceNameTruncated": "awsbac5607b78c",
+    "userPoolName": "awsbackend5607b78c_userpool_5607b78c",
+    "autoVerifiedAttributes": [
+      "email"
+    ],
+    "mfaConfiguration": "ON",
+    "mfaTypes": [
+      "SMS Text Message"
+    ],
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
+    "defaultPasswordPolicy": false,
+    "passwordPolicyMinLength": 8,
+    "passwordPolicyCharacters": [],
+    "requiredAttributes": [
+      "birthdate",
+      "email",
+      "gender",
+      "name",
+      "phone_number",
+      "picture"
+    ],
+    "aliasAttributes": [],
+    "userpoolClientGenerateSecret": false,
+    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientWriteAttributes": [
+      "email"
+    ],
+    "userpoolClientReadAttributes": [
+      "email"
+    ],
+    "userpoolClientLambdaRole": "awsbac5607b78c_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": false,
+    "sharedId": "5607b78c",
+    "resourceName": "awsbackend5607b78c5607b78c",
+    "authSelections": "identityPoolAndUserPool",
+    "useDefault": "manual",
+    "thirdPartyAuth": true,
+    "authProviders": [
+      "graph.facebook.com",
+      "accounts.google.com",
+      "www.amazon.com"
+    ],
+    "usernameAttributes": [
+      "email"
+    ],
+    "userPoolGroups": true,
+    "adminQueries": true,
+    "triggers": {
+      "DefineAuthChallenge": [
+        "captcha-define-challenge"
+      ],
+      "CreateAuthChallenge": [
+        "captcha-create-challenge"
+      ],
+      "VerifyAuthChallengeResponse": [
+        "captcha-verify"
+      ],
+      "CustomMessage": [
+        "verification-link"
+      ]
+    },
+    "hostedUI": true,
+    "hostedUIDomainName": "backend",
+    "authProvidersUserPool": [
+      "Google"
+    ],
+    "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid profile email\",\"AttributeMapping\":{\"birthdate\":\"birthdays\",\"email\":\"email\",\"gender\":\"genders\",\"name\":\"name\",\"phone_number\":\"phoneNumbers\",\"picture\":\"picture\",\"username\":\"sub\"}}]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://everything.apps/login/\"],\"LogoutURLs\":[\"https://everything.apps/welcome/\"]}",
+    "userPoolGroupList": [
+      "users"
+    ],
+    "adminQueryGroup": "users",
+    "serviceName": "Cognito",
+    "verificationBucketName": "awsbackend5607b78c5607b78cverificationbucket",
+    "usernameCaseSensitive": false,
+    "useEnabledMfas": true
+  }
+}
