@@ -23,7 +23,7 @@
         "awsbackend5607b78c5607b78cDefineAuthChallenge": {},
         "awsbackend5607b78c5607b78cCreateAuthChallenge": {},
         "awsbackend5607b78c5607b78cVerifyAuthChallengeResponse": {
-          "RECAPTCHASECRET": "6LcclC8qAAAAAPAI8bOvZPwoaC5878j1tCfD3Amy"
+        "RECAPTCHASECRET": "${process.env.RE_CAPTCHA_SECRET}"  
         },
         "awsbackend5607b78c5607b78cCustomMessage": {
           "REDIRECTURL": "www.everything.apps.com/home",
